@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import styles from "../styles/ContentImage.module.scss";
 
-const ContentImage = () => {
+const ContentImage = ({imageSrc}) => {
   const handleDownload = () => {
     const posterImage: HTMLImageElement = document.querySelector(".poster");
     const imageUrl = posterImage.src;
@@ -34,7 +34,7 @@ const ContentImage = () => {
     <div className={styles.message__content}>
       <Image
         className="poster"
-        src={"/assets/images/post-img-example.png"}
+        src={imageSrc}
         alt="post image"
         width={500}
         height={508.214}

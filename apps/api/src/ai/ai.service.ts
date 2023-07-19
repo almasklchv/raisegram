@@ -43,13 +43,13 @@ export class AiService {
         },
         {
           role: 'user',
-          content: `Текст поста: ${text}`,
+          content: `Post text: ${text['text']}`,
         },
       ],
     });
 
     const response = await this.openAi.createImage({
-      prompt: `${promptForImage.data.choices[0].message.content}`,
+      prompt: `digital art for ${promptForImage.data.choices[0].message.content}`,
       n: 1,
       size: "1024x1024",
     });

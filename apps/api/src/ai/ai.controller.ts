@@ -13,5 +13,8 @@ export class AiController {
   }
 
   @Post('/image')
-  async getImage() {}
+  async getImage(@Query() text: string) {
+    const imageUrl = await this.aiService.getImage(text);
+    return imageUrl;
+  }
 }
