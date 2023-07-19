@@ -1,3 +1,10 @@
+import '../styles/globals.css'
+import 'normalize.css'
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+
+
+
 export default function RootLayout({
   children,
 }: {
@@ -5,7 +12,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="root">
+        <div className="centralizer">
+          <Header />
+          {children}
+          <Footer />
+        </div>
+      </body>
     </html>
   );
 }

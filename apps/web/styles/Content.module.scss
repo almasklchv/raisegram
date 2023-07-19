@@ -1,0 +1,20 @@
+.message__content {
+  position: relative;
+  max-width: 1001px;
+  border-radius: 50px;
+  background: #f4efc1;
+  font-size: 40px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.5);
+  padding-left: 80px;
+  padding-right: 90px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  .icon {
+    position: absolute;
+    right: 45px;
+    top: 45px;
+    cursor: pointer;
+  }
+}
