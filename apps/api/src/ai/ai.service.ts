@@ -46,7 +46,7 @@ export class AiService {
           content: `Post text: ${text['text']}`,
         },
       ],
-    });
+    })
 
     const response = await this.openAi.createImage({
       prompt: `digital art for ${promptForImage.data.choices[0].message.content}`,

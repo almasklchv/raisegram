@@ -45,12 +45,13 @@ const Content = ({ topic, keywords, generateClicked }) => {
     }
   };
 
+
   useEffect(() => {
     if (generateClicked === "true") {
       descriptionRef.current.innerText = "Генерация...";
       getPostFromApi(topic, keywords);
     }
-  }, [topic, keywords, generateClicked]);
+  }, [generateClicked]);
 
   const copyText = () => {
     navigator.clipboard.writeText(descriptionRef.current.innerText).then(() => {
