@@ -1,0 +1,15 @@
+.btn {
+    cursor: pointer;
+    background: radial-gradient(156.41% 156.35% at 53.43% -38.10%, #E1E441 0%, #F54C6E 54.83%, #E219DA 100%);
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 17px;
+    margin-left: 20px;
+    padding: 15px;
+}
+
+.btn:hover {
+    background: radial-gradient(156.41% 156.35% at 53.43% -38.10%, #71725C 0%, #443D3E 54.83%, #332E33 100%);
+}

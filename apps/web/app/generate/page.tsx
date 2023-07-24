@@ -29,7 +29,7 @@ const page = () => {
         onGenerateClicked={handleGenerateClicked}
       />
       <div className="messages">
-        <Messages isText={true} topic={topic} keywords={keywords} generateClicked={generateClicked}/>
+        <Messages isText={true} topic={topic} keywords={keywords} generateClicked={generateClicked} setGenerateClicked={setGenerateClicked}/>
       </div>
     </main>
   );

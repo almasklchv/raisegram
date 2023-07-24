@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Inika } from "@next/font/google";
+import { useRouter } from "next/navigation";
 
 const inika = Inika({
   subsets: ["latin"],
@@ -9,6 +10,14 @@ const inika = Inika({
 });
 
 const Nav = () => {
+  const router = useRouter();
+  const handleGenerateRoute = (e) => {
+    e.preventDefault();
+    if (localStorage.getItem("user")) {
+      router.push("/generate");
+    } else {
+    }
+  };
   return (
     <nav>
       <ul className="navigation__list">
@@ -18,7 +27,11 @@ const Nav = () => {
           </Link>
         </li>
         <li>
-          <Link href={"/generate"} className="navigation__link">
+          <Link
+            onClick={handleGenerateRoute}
+            href={"#"}
+            className="navigation__link"
+          >
             Генерация
           </Link>
         </li>

@@ -1,0 +1,27 @@
+.first {
+  margin-left: 7%;
+}
+
+.introduce {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -7%;
+}
+
+.introduce > div > p {
+  color: #757575;
+  font-size: 35px;
+}
+
+.introduce > div > img {
+  position: relative;
+  justify-self: end;
+}
+
+.title {
+  color: rgba(0, 0, 0, 0.80);
+  font-size: 80px;
+  font-weight: 800;
+  margin-top: -10%;
+}

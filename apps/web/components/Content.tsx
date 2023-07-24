@@ -7,7 +7,7 @@ import styles from "../styles/Content.module.scss";
 import axios from "axios";
 import ContentImage from "./ContentImage";
 
-const Content = ({ topic, keywords, generateClicked }) => {
+const Content = ({ topic, keywords, generateClicked, setGenerateClicked }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const descriptionRef = useRef(null);
   const iconRef = useRef(null);
@@ -50,6 +50,8 @@ const Content = ({ topic, keywords, generateClicked }) => {
     if (generateClicked === "true") {
       descriptionRef.current.innerText = "Генерация...";
       getPostFromApi(topic, keywords);
+      setGenerateClicked('')
+      setImageLoaded(false)
     }
   }, [generateClicked]);
 

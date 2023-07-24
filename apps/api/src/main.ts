@@ -1,23 +1,14 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import * as express from 'express';
+import { NestExpressApplication } from '@nestjs/platform-express'; // Import NestExpressApplication
+import { IoAdapter } from '@nestjs/platform-socket.io';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
-  // Создаем экземпляр Express приложения
-  const expressApp = express();
-
-  // Устанавливаем заголовки CORS
-  expressApp.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-    next();
-  });
-
-  // Используем Express middleware
-  app.use(expressApp);
+  // Enable CORS
+  app.enableCors();
+  app.useWebSocketAdapter(new IoAdapter(app));
 
   await app.listen(3333);
 }

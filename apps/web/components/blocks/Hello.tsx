@@ -26,7 +26,7 @@ const Hello = ({ onTopicChange, onKeywordsChange, onGenerateClicked }) => {
       }
     })
     if (isNotEmpty) {
-      onGenerateClicked('true')
+      onGenerateClicked('true');
     } else {
       const fillAllElements: HTMLParagraphElement = document.querySelector('.fillAllElements')
       fillAllElements.style.display = 'inline';
@@ -46,10 +46,14 @@ const Hello = ({ onTopicChange, onKeywordsChange, onGenerateClicked }) => {
       </p>
       <PrimaryTextInput
         placeholder="Введите тему..."
+        width={1139}
+        height={107}
         onChange={handleTopicChange}
       />
       <SecondaryTextInput
         placeholder="Введите ключевые слова..."
+        width={1139}
+        height={107}
         onChange={handleKeywordsChange}
 
       />

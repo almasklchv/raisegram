@@ -56,3 +56,4 @@ export class AiService {
     return response.data.data[0].url;
   }
 }
+
