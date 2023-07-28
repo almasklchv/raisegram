@@ -14,32 +14,9 @@ const Content = ({ topic, keywords, generateClicked, setGenerateClicked }) => {
   const iconRef = useRef(null);
   const [imageSrc, setImageSrc] = useState("");
 
-  async function imageUrlToBase64(imageUrl) {
-    try {
-      const response = await fetch(imageUrl);
-      const blob = await response.blob();
-  
-      return new Promise((resolve, reject) => {
-        const reader = new FileReader();
-  
-        reader.onloadend = () => {
-          resolve(reader.result);
-        };
-  
-        reader.onerror = () => {
-          reject(new Error('Error converting image to Base64'));
-        };
-  
-        reader.readAsDataURL(blob);
-      });
-    } catch (error) {
-      throw new Error('Failed to fetch the image');
-    }
-  }
-
   const getPostFromApi = async (topic, keywords) => {
     try {
-      await axios.post("http://localhost:3333/ai/text/", {
+      await axios.post("https://raisegram.ctw.re/api/ai/text/", {
         topic,
         keywords,
       }).then((response) => {
@@ -54,7 +31,7 @@ const Content = ({ topic, keywords, generateClicked, setGenerateClicked }) => {
   const getImageFromApi = async (text) => {
     try {
       await axios
-        .post("http://localhost:3333/ai/image/", text)
+        .post("https://raisegram.ctw.re/api/ai/image/", text)
         .then((response) => {
           setImageSrc(response.data);
           setImageLoaded(true);
@@ -62,7 +39,7 @@ const Content = ({ topic, keywords, generateClicked, setGenerateClicked }) => {
             localStorage.getItem("user")
           ).data;
           const authorId = userFromLocalStorage["id"];
-          axios.post("http://localhost:3333/post/", {
+          axios.post("https://raisegram.ctw.re/api/post/", {
             authorId: authorId,
             title: topic,
             keywords: keywords,

@@ -36,7 +36,7 @@ const Auth = ({
     if (isVerified) {
       if (email && password) {
         const isUserExist = await axios.post(
-          "http://localhost:3333/users/check",
+          "https://raisegram.ctw.re/api/users/check",
           null,
           {
             params: {
@@ -48,7 +48,7 @@ const Auth = ({
 
         if (!isUserExist.data) {
           await axios
-            .post("http://localhost:3333/users/create", null, {
+            .post("https://raisegram.ctw.re/api/users/create", null, {
               params: {
                 email: email,
                 hash: password,
@@ -61,7 +61,7 @@ const Auth = ({
         } else {
           try {
             await axios
-              .post("http://localhost:3333/users/get", null, {
+              .post("https://raisegram.ctw.re/api/users/get", null, {
                 params: {
                   email: email,
                   hash: password,
