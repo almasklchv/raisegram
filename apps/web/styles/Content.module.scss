@@ -18,3 +18,48 @@
     cursor: pointer;
   }
 }
+
+@media (max-width: 1000px) {
+  .message__content {
+    font-size: 30px;
+
+    .icon {
+      width: 25px;
+      height: 25px;
+      right: 35px;
+      top: 35px;
+    }
+  }
+  
+}
+
+@media (max-width: 850px) {
+  .message__content {
+    font-size: 25px;
+    .icon {
+      width: 20px;
+      height: 20px;
+      right: 30px;
+      top: 30px;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .message__content {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 550px) {
+  .message__content {
+    font-size: 17px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    .icon {
+      width: 15px;
+      height: 15px;
+    }
+  }
+}

@@ -213,11 +213,33 @@ footer {
   background: none;
   border: none;
   cursor: pointer;
+  z-index: 50;
 }
 
 .modal-close > img {
   position: fixed;
   margin-left: -30px;
+}
+
+
+
+.modal > div > .emailInput, .modal > div >.passwordInput {
+  width: 90%;
+  height: 70px;
+  font-size: 25px;
+  padding-left: 30px;
+  margin: 0px auto 20px;
+}
+
+.passwordInput {
+  margin: 0px auto;
+}
+
+.auth > .authButton {
+  width: 330px;
+  height: 66px;
+  font-size: 22px;
+  margin: 35px auto 0px;
 }
 
 @media (max-width: 1474px) {
@@ -238,13 +260,46 @@ footer {
   }
 }
 
-
 @media (max-width: 1000px) {
   .hello > button {
     margin-top: 60px;
     width: 339px;
     height: 75px;
     font-size: 26.981px;
+  }
+
+  .custom-text {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 850px) {
+  .hello > button {
+    width: 305px;
+    height: 70px;
+    font-size: 24.981px;
+  }
+
+  .custom-text {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 800px) {
+  .messages {
+    margin-top: 105px;
+  }
+}
+
+@media (max-width: 700px) {
+  .hello > button {
+    width: 265px;
+    height: 60px;
+    font-size: 20.981px;
+  }
+
+  .messages {
+    margin-bottom: 100px;
   }
 }
 
@@ -288,10 +343,42 @@ footer {
   }
 }
 
+@media (max-width: 550px) {
+  .modal > div > .emailInput, .modal > div > .passwordInput {
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+
+  .auth > .authButton {
+    width: 215px;
+    height: 48px;
+    font-size: 15px;
+  }
+}
+
 @media (max-width: 608px) {
   .footer__logo {
     height: 81.6px;
     width: 158.4px;
+  }
+}
+
+@media (max-width: 550px) {
+  .custom-text {
+    margin-bottom: 12px;
+  }
+
+  .hello > button {
+    margin-top: 43px;
+    width: 173px;
+    height: 42px;
+    font-size: 16px;
+  }
+
+  .modal-close > img {
+    width: 25px;
+    height: 25px;
+    margin-left: -15px;
   }
 }
 

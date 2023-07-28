@@ -73,6 +73,7 @@ const Introduce = () => {
           alt="hand and smartphone"
           width={771.67}
           height={1048.341}
+          className={styles.hand}
         />
       </div>
       {isAuthModalOpen && (

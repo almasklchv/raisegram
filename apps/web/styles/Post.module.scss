@@ -12,7 +12,7 @@
 }
 
 .postContainer:last-child {
-    margin-bottom: 200px;
+  margin-bottom: 200px;
 }
 
 .postImage {
@@ -20,22 +20,20 @@
 }
 
 .first {
-    position: relative;
-    left: -150px;
-    top: 20px;
+  position: relative;
+  left: -150px;
+  top: 20px;
 }
 
-
-
 .third {
-    cursor: pointer;
-    position: relative;
-    left: 150px;
-    top: 20px;
+  cursor: pointer;
+  position: relative;
+  left: 150px;
+  top: 20px;
 
-    img {
-        margin-left: -7px;
-    }
+  img {
+    margin-left: -7px;
+  }
 }
 
 .small {
@@ -67,25 +65,196 @@
   line-height: normal;
 }
 
-
 .postModal {
+  position: absolute;
+  top: 633px;
+  max-width: 60%;
+  border-radius: 50px;
+  background: #f4efc1;
+  font-size: 40px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.5);
+  padding-left: 80px;
+  padding-right: 90px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  .icon {
     position: absolute;
-    top: 633px;
-    max-width: 600px;
-    border-radius: 50px;
-    background: #f4efc1;
-    font-size: 40px;
-    font-weight: 500;
-    color: rgba(0, 0, 0, 0.5);
-    padding-left: 80px;
-    padding-right: 90px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-  
+    right: 45px;
+    top: 45px;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 1300px) {
+  .title {
+    font-size: 35px;
+  }
+
+  .keywords {
+    font-size: 25px;
+  }
+
+  .postContainer {
+    width: 55%;
+  }
+
+  .postImage {
+    width: 101px;
+    height: 103px;
+  }
+
+  .openImage {
+    width: 88px;
+    height: 88px;
+  }
+
+  .small {
+    font-size: 15px;
+  }
+
+  .open {
+    margin-left: -2px;
+  }
+}
+
+@media (max-width: 850px) {
+  .postModal {
+    margin-top: -25px;
+  }
+}
+
+@media (max-width: 550px) {
+  .postModal {
+    margin-top: -90px;
+  }
+}
+
+@media (max-width: 815px) {
+  .postContainer {
+    height: 220px;
+    margin-bottom: 50px;
+  }
+
+  .title {
+    font-size: 27px;
+  }
+
+  .keywords {
+    font-size: 17px;
+  }
+
+  .postImage {
+    width: 81px;
+    height: 83px;
+  }
+
+  .openImage {
+    width: 68px;
+    height: 68px;
+  }
+
+  .small {
+    font-size: 13px;
+    min-width: 80px;
+  }
+
+  .first {
+    left: -100px;
+    top: 11px;
+  }
+  .third {
+    left: 115px;
+    top: 14px;
+  }
+}
+
+@media (max-width: 580px) {
+  .first {
+    display: none;
+  }
+
+  .second {
+    margin-left: -36px;
+  }
+
+  .third {
+    left: 65px;
+  }
+
+  .title {
+    font-size: 18px;
+    margin-bottom: -15px;
+  }
+
+  .keywords {
+    font-size: 12.5px;
+  }
+
+  .openImage {
+    width: 38px;
+    height: 38px;
+  }
+
+  .small {
+    font-size: 10px;
+  }
+
+  .open {
+    margin-left: -12px;
+  }
+
+  .postContainer {
+    height: 160px;
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .postModal {
+    font-size: 30px;
+
     .icon {
-      position: absolute;
-      right: 45px;
-      top: 45px;
-      cursor: pointer;
+      width: 25px;
+      height: 25px;
+      right: 35px;
+      top: 35px;
     }
   }
+  
+}
+
+@media (max-width: 850px) {
+  .postModal {
+    font-size: 25px;
+    .icon {
+      width: 20px;
+      height: 20px;
+      right: 30px;
+      top: 30px;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .postModal {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 550px) {
+  .postModal {
+    font-size: 17px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: -180px;
+    max-width: 45%;
+    padding-left: 50px;
+
+    .icon {
+      width: 15px;
+      height: 15px;
+    }
+  }
+}

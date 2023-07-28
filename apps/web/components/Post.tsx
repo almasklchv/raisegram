@@ -53,8 +53,9 @@ const Post = ({ title, keywords, imageUrl, post, date }) => {
           alt="open icon"
           width={108}
           height={108}
+          className={styles.openImage}
         />
-        <p className={styles.small}>ОТКРЫТЬ</p>
+        <p className={classNames(styles.small, styles.open)}>ОТКРЫТЬ</p>
       </div>
       {isPostModalOpened && (
         <Modal isOpen={openPostModal} onClose={closePostModal}>
@@ -72,7 +73,7 @@ const Post = ({ title, keywords, imageUrl, post, date }) => {
               {post}
             </p>
           </div>
-          <ContentImage imageSrc={imageUrl}/>
+          <ContentImage marginTop={'-150px'} imageSrc={imageUrl}/>
         </Modal>
       )}
     </div>

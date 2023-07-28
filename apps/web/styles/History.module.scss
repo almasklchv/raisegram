@@ -22,3 +22,19 @@
   font-weight: 500;
   margin-bottom: 250px;
 }
+
+
+@media (max-width: 815px) {
+  .title {
+    font-size: 55px;
+    margin-bottom: 140px;
+  }
+}
+
+@media (max-width: 580px) {
+  .title {
+    font-size: 25px;
+    margin-bottom: 80px;
+    margin-top: -30px;
+  }
+}

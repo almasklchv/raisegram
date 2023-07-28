@@ -12,6 +12,7 @@ const Messages = ({isText, topic, keywords, generateClicked, setGenerateClicked}
         alt="profile photo"
         width={100}
         height={100}
+        className={styles.bot}
       />
       <Content topic={topic} keywords={keywords} generateClicked={generateClicked} setGenerateClicked={setGenerateClicked}/> 
     </div>

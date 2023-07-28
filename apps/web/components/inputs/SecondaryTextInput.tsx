@@ -4,7 +4,7 @@ import styles from '../../styles/SecondaryTextInput.module.scss'
 
 const SecondaryTextInput = (props) => {
   return (
-    <input maxLength={5000} style={{width: props.width, height: props.height, fontSize: props.fontSize, paddingLeft: props.paddingleft}} className={classNames('custom-text', styles.customText)} type='text' {...props} required/>
+    <input maxLength={5000} className={classNames('custom-text', styles.customText, props.classnameprop)} type='text' {...props} required/>
   )
 }
 

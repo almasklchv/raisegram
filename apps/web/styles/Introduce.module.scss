@@ -44,13 +44,9 @@
 }
 
 @media (max-width: 1200px) {
-  .introduce {
-    div {
-      img {
-        height: 848.7px;
-        width: 623px;
-      }
-    }
+  .introduce > div > img {
+    height: 848.7px;
+    width: 623px;
   }
 
   .title {
@@ -61,7 +57,7 @@
 @media (max-width: 1080px) {
   .introduce {
     div {
-      img {
+      .hand {
         display: none;
       }
     }
@@ -75,7 +71,7 @@
 
 @media(max-width: 800px) {
   .title {
-    margin-top: -26%;
+    margin-top: -24%;
   }
 }
 

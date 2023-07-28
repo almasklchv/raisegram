@@ -6,3 +6,59 @@
     margin-left: 20px;
   }
 }
+
+
+@media (max-width: 1000px) {
+  .message__content {
+    .poster {
+      width: 400px;
+      height: 408px;
+    }
+
+    .icon {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  .message__content {
+    .poster {
+      width: 350px;
+      height: 358px;
+    }
+
+    .icon {
+      width: 25px;
+      height: 25px;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .message__content {
+    .poster {
+      width: 300px;
+      height: 300px;
+    }
+
+    
+  }
+}
+
+@media (max-width: 550px) {
+  .message__content {
+    .poster {
+      width: 240px;
+      height: 240px;
+    }
+
+    .icon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  
+}

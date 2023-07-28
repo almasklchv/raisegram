@@ -9,3 +9,27 @@
     width: 80%;
   }
 }
+
+@media (max-width: 850px) {
+  .customText {
+    font-size: 25px;
+    height: 93px;
+    padding-left: 40px;
+  }
+}
+
+@media (max-width: 700px) {
+  .customText {
+    font-size: 20px;
+    height: 80px;
+    padding-left: 30px;
+  }
+}
+
+@media (max-width: 550px) {
+  .customText {
+    font-size: 16px;
+    height: 50px;
+    padding-left: 23px;
+  }
+}

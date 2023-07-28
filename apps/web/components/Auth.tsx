@@ -91,30 +91,26 @@ const Auth = ({
       <PrimaryTextInput
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        paddingleft={paddingleft}
-        fontSize={fontSize}
-        width={inputWidth}
-        height={inputHeight}
         placeholder={input1}
+        classnameprop={'emailInput'}
       ></PrimaryTextInput>
       <SecondaryTextInput
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-        paddingleft={paddingleft}
-        fontSize={fontSize}
-        width={inputWidth}
-        height={inputHeight}
-        placeholder={input2}
         type={"password"}
+        placeholder={input2}
+        classnameprop={'passwordInput'}
       ></SecondaryTextInput>
-      <ReCAPTCHA style={{borderRadius: 20}} sitekey={`${siteKeyCaptchaV3}`} onChange={onCaptcha} />
+      <div className={styles.recaptcha}>
+        <ReCAPTCHA
+          style={{ borderRadius: 20 }}
+          sitekey={`${siteKeyCaptchaV3}`}
+          onChange={onCaptcha}
+        />
+      </div>
       <SecondaryButton
         onClick={handleAuth}
-        margin={"0 auto"}
-        margintop={35}
-        fontSize={22}
-        width={buttonWidth}
-        height={buttonHeight}
+        classnameprop={'authButton'}
       >
         {button}
       </SecondaryButton>

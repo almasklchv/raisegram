@@ -61,7 +61,7 @@ const Hello = ({ onTopicChange, onKeywordsChange, onGenerateClicked }) => {
         onChange={handleKeywordsChange}
       />
       <SecondaryButton onClick={handleGenerateClicked} disabled={isGenerating}>Сгенерировать</SecondaryButton>
-      <p>Нажатия на кнопку - 1 раз в минуту</p>
+      <p className={styles.clickLimit}>Нажатия на кнопку - 1 раз в минуту</p>
       <p className="fillAllElements" style={{display: 'none'}}>Заполните все поля!</p>
     </div>
   );

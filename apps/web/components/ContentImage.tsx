@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import styles from "../styles/ContentImage.module.scss";
 
-const ContentImage = ({imageSrc}) => {
+const ContentImage = ({imageSrc, ...props}) => {
   const handleDownload = () => {
     const posterImage: HTMLImageElement = document.querySelector(".poster");
     const imageUrl = posterImage.src;
@@ -31,9 +31,9 @@ const ContentImage = ({imageSrc}) => {
   };
 
   return (
-    <div className={styles.message__content}>
+    <div style={{marginTop: props.marginTop}} className={styles.message__content}>
       <Image
-        className="poster"
+        className={styles.poster}
         src={imageSrc}
         alt="post image"
         width={500}
