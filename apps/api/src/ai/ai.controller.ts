@@ -2,7 +2,7 @@ import { Body, Controller, HttpCode, Post, Query } from '@nestjs/common';
 import { AiService } from './ai.service';
 import { AiDto } from './dto';
 
-@Controller('/ai')
+@Controller('/api/ai')
 export class AiController {
   constructor(private aiService: AiService) {}
 

@@ -3,7 +3,7 @@ import { Response } from 'express';
 import { UserService } from './user.service';
 import { UserDto } from './dto';
 
-@Controller('/users')
+@Controller('/api/users')
 export class UserController {
   constructor(private userService: UserService) {}
 
