@@ -3,6 +3,7 @@ import { AiModule } from './ai/ai.module';
 import { ConfigModule } from '@nestjs/config';
 import { UserModule } from './user/user.module';
 import { PrismaModule } from './prisma/prisma.module';
+import { PostModule } from './post/post.module';
 @Module({
   imports: [
    PrismaModule,
@@ -11,6 +12,7 @@ import { PrismaModule } from './prisma/prisma.module';
     }),
     AiModule,
     UserModule,
+    PostModule
   ],
   controllers: [],
   providers: [],

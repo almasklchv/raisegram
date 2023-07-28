@@ -1,25 +1,46 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Hello from "../../components/blocks/Hello";
 import Messages from "../../components/blocks/Messages";
+import { useRouter } from "next/navigation";
 
 const page = () => {
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!localStorage.getItem("user")) {
+      router.push("/");
+    }
+  }, []);
+
   const [topic, setTopic] = useState("");
   const [keywords, setKeywords] = useState("");
-  const [generateClicked, setGenerateClicked] = useState('');
+  const [generateClicked, setGenerateClicked] = useState("");
 
   const handleTopicChange = (topic) => {
-    setTopic(topic);
+    if (!localStorage.getItem("user")) {
+      router.push("/");
+    } else {
+      setTopic(topic);
+    }
   };
 
   const handleKeywordsChange = (keywords) => {
-    setKeywords(keywords);
+    if (!localStorage.getItem("user")) {
+      router.push("/");
+    } else {
+      setKeywords(keywords);
+    }
   };
 
   const handleGenerateClicked = (click) => {
-    setGenerateClicked(click);
-  }
+    if (!localStorage.getItem("user")) {
+      router.push("/");
+    } else {
+      setGenerateClicked(click);
+    }
+  };
 
   return (
     <main>
@@ -29,7 +50,13 @@ const page = () => {
         onGenerateClicked={handleGenerateClicked}
       />
       <div className="messages">
-        <Messages isText={true} topic={topic} keywords={keywords} generateClicked={generateClicked} setGenerateClicked={setGenerateClicked}/>
+        <Messages
+          isText={true}
+          topic={topic}
+          keywords={keywords}
+          generateClicked={generateClicked}
+          setGenerateClicked={setGenerateClicked}
+        />
       </div>
     </main>
   );

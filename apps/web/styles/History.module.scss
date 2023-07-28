@@ -1,0 +1,24 @@
+.centralizer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  color: rgba(0, 0, 0, 0.8);
+  font-family: Inter;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  margin-bottom: 150px;
+}
+
+.primaryText {
+  font-family: Inter;
+  font-size: 40px;
+  color: #1e1112;
+  font-weight: 500;
+  margin-bottom: 250px;
+}

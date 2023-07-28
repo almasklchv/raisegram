@@ -9,13 +9,15 @@ const inika = Inika({
   weight: ["400", "700"],
 });
 
-const Nav = () => {
+const Nav = ({openAuthModal}) => {
   const router = useRouter();
+
   const handleGenerateRoute = (e) => {
     e.preventDefault();
     if (localStorage.getItem("user")) {
       router.push("/generate");
     } else {
+      openAuthModal()
     }
   };
   return (
@@ -46,6 +48,7 @@ const Nav = () => {
                 alt="instagram icon"
                 width={32}
                 height={32}
+                className="instagram"
               />
             </a>
           </li>
@@ -56,9 +59,10 @@ const Nav = () => {
             >
               <Image
                 src={"/assets/icons/telegram.svg"}
-                alt="instagram icon"
+                alt="telegram icon"
                 width={41}
                 height={41}
+                className="telegram"
               />
             </a>
           </li>

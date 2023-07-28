@@ -4,6 +4,7 @@ import Image from "next/image";
 import classNames from "classnames";
 
 const HowToStart = () => {
+  
   return (
     <div>
       <h2 className={styles.title}>
@@ -63,13 +64,15 @@ const HowToStart = () => {
             <p className={styles.stepPosition}>04</p>
           </div>
         </div>
+        
         <Image
           className={styles.lineToFive}
           src={"/assets/images/arrow-1.svg"}
           alt={""}
-          width={376}
+          width={25}
           height={376}
         />
+        
         <p className={classNames(styles.stepInfo, styles.stepFiveInfo)}>
           ВАШ ПОСТ ГОТОВ!
         </p>

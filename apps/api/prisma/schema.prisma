@@ -11,8 +11,8 @@ model User {
     id        String   @id @default(cuid())
     createdAt DateTime @default(now())
     email     String   @unique
-    username      String
-    posts     Post[]
+    hash      String
+    posts     Post[] 
 }
 
 model Post {
@@ -21,6 +21,8 @@ model Post {
     title     String
     keywords  String
     imageUrl  String
-    author    User?    @relation(fields: [authorId], references: [id])
-    authorId  String?
+    post String
+    date String
+    author    User   @relation(fields: [authorId], references: [id])
+    authorId  String 
 }

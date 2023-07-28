@@ -1,3 +1,11 @@
 .customText {
     background-color: #f1dddd;
+    width: 1139px;
+    height: 107px;
 }
+
+@media(max-width: 1265px) {
+    .customText {
+      width: 80%; 
+    }
+  }

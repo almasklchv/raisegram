@@ -3,3 +3,28 @@
   height: 63px;
   border-radius: 15px;
 }
+
+@media (max-width: 1474px) {
+  .btn {
+    width: 270px;
+    height: 48px;
+    font-size: 25px;
+  }
+}
+
+
+@media (max-width: 641px) {
+  .btn {
+    width: 210px;
+    height: 40px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .btn {
+    width: 165px;
+    height: 34px;
+    font-size: 16px;
+  }
+}

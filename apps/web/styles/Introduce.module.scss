@@ -20,8 +20,92 @@
 }
 
 .title {
-  color: rgba(0, 0, 0, 0.80);
+  color: rgba(0, 0, 0, 0.8);
   font-size: 80px;
   font-weight: 800;
   margin-top: -10%;
+}
+
+@media (max-width: 1474px) {
+  .title {
+    font-size: 65px;
+    margin-top: -20%;
+  }
+
+  .introduce > div > p {
+    color: #757575;
+    font-size: 25px;
+  }
+
+  .introduce > div > img {
+    height: 943px;
+    width: 693px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .introduce {
+    div {
+      img {
+        height: 848.7px;
+        width: 623px;
+      }
+    }
+  }
+
+  .title {
+    font-size: 55px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .introduce {
+    div {
+      img {
+        display: none;
+      }
+    }
+  }
+
+  .first {
+    margin-top: 18%;
+    max-width: 700px;
+  }
+}
+
+@media(max-width: 800px) {
+  .title {
+    margin-top: -26%;
+  }
+}
+
+
+@media (max-width: 641px) {
+  .title {
+    font-size: 45px;
+  }
+
+  .introduce {
+    div {
+      p {
+        font-size: 20px;
+      }
+    }
+    
+  }
+}
+
+@media (max-width: 500px) {
+  .title {
+    font-size: 35px;
+  }
+
+  .introduce {
+    div {
+      p {
+        font-size: 16px;
+      }
+    }
+    
+  }
 }

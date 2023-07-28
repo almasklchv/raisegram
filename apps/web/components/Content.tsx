@@ -6,25 +6,46 @@ import classNames from "classnames";
 import styles from "../styles/Content.module.scss";
 import axios from "axios";
 import ContentImage from "./ContentImage";
+import moment from 'moment';
 
 const Content = ({ topic, keywords, generateClicked, setGenerateClicked }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const descriptionRef = useRef(null);
   const iconRef = useRef(null);
-  const [imageSrc, setImageSrc] = useState('');
+  const [imageSrc, setImageSrc] = useState("");
+
+  async function imageUrlToBase64(imageUrl) {
+    try {
+      const response = await fetch(imageUrl);
+      const blob = await response.blob();
+  
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+  
+        reader.onloadend = () => {
+          resolve(reader.result);
+        };
+  
+        reader.onerror = () => {
+          reject(new Error('Error converting image to Base64'));
+        };
+  
+        reader.readAsDataURL(blob);
+      });
+    } catch (error) {
+      throw new Error('Failed to fetch the image');
+    }
+  }
 
   const getPostFromApi = async (topic, keywords) => {
     try {
-      const { data } = await axios.post("http://localhost:3333/ai/text/", null, {
-        params: {
-          topic,
-          keywords,
-        },
+      await axios.post("http://localhost:3333/ai/text/", {
+        topic,
+        keywords,
+      }).then((response) => {
+        descriptionRef.current.innerText = response.data.reply;
+        getImageFromApi(descriptionRef.current.innerText);
       });
-      descriptionRef.current.innerText = data.reply;
-      const imageUrl = await getImageFromApi(descriptionRef.current.innerText);
-      setImageSrc(imageUrl);
-      setImageLoaded(true);
     } catch (error) {
       console.log(error);
     }
@@ -32,26 +53,36 @@ const Content = ({ topic, keywords, generateClicked, setGenerateClicked }) => {
 
   const getImageFromApi = async (text) => {
     try {
-      const { data } = await axios.post("http://localhost:3333/ai/image/", null, {
-        params: {
-          text,
-        },
-      });
-      console.log(data)
-      return data;
+      await axios
+        .post("http://localhost:3333/ai/image/", text)
+        .then((response) => {
+          setImageSrc(response.data);
+          setImageLoaded(true);
+          const userFromLocalStorage = JSON.parse(
+            localStorage.getItem("user")
+          ).data;
+          const authorId = userFromLocalStorage["id"];
+          axios.post("http://localhost:3333/post/", {
+            authorId: authorId,
+            title: topic,
+            keywords: keywords,
+            imageUrl: response.data,
+            date: moment().format('DD-MM-YYYY'),
+            post: descriptionRef.current.innerText,
+          });
+        });
     } catch (error) {
       console.log(error);
-      return '';
+      return "";
     }
   };
-
 
   useEffect(() => {
     if (generateClicked === "true") {
       descriptionRef.current.innerText = "Генерация...";
       getPostFromApi(topic, keywords);
-      setGenerateClicked('')
-      setImageLoaded(false)
+      setGenerateClicked("");
+      setImageLoaded(false);
     }
   }, [generateClicked]);
 
@@ -66,7 +97,10 @@ const Content = ({ topic, keywords, generateClicked, setGenerateClicked }) => {
 
   return (
     <div>
-      <div className={classNames("message__content", styles.message__content)}>
+      <div
+        id="content"
+        className={classNames("message__content", styles.message__content)}
+      >
         <Image
           ref={iconRef}
           onClick={copyText}
@@ -81,10 +115,9 @@ const Content = ({ topic, keywords, generateClicked, setGenerateClicked }) => {
         </p>
       </div>
       {imageLoaded && <ContentImage imageSrc={imageSrc} />}
-      {!imageLoaded && <ContentImage imageSrc={'/assets/images/loader.gif'} />}
+      {!imageLoaded && <ContentImage imageSrc={"/assets/images/loader.gif"} />}
     </div>
   );
 };
 
 export default Content;
-

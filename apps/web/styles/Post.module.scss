@@ -1,0 +1,91 @@
+.postContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 750px;
+  height: 291px;
+  padding-left: 20%;
+  padding-right: 20%;
+  background: #7c6bc3;
+  margin-bottom: 69px;
+  border-radius: 35px;
+}
+
+.postContainer:last-child {
+    margin-bottom: 200px;
+}
+
+.postImage {
+  border-radius: 100%;
+}
+
+.first {
+    position: relative;
+    left: -150px;
+    top: 20px;
+}
+
+
+
+.third {
+    cursor: pointer;
+    position: relative;
+    left: 150px;
+    top: 20px;
+
+    img {
+        margin-left: -7px;
+    }
+}
+
+.small {
+  color: #fff;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-left: 5px;
+}
+
+.title {
+  color: #fff;
+  font-family: Inter;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  margin-bottom: -30px;
+}
+
+.keywords {
+  color: #fff;
+  font-family: Inter;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+
+.postModal {
+    position: absolute;
+    top: 633px;
+    max-width: 600px;
+    border-radius: 50px;
+    background: #f4efc1;
+    font-size: 40px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.5);
+    padding-left: 80px;
+    padding-right: 90px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  
+    .icon {
+      position: absolute;
+      right: 45px;
+      top: 45px;
+      cursor: pointer;
+    }
+  }

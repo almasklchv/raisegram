@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../../styles/Hello.module.scss";
 import PrimaryTextInput from "../inputs/PrimaryTextInput";
 import SecondaryTextInput from "../inputs/SecondaryTextInput";
 import SecondaryButton from "../buttons/SecondaryButton";
+import { useRouter } from "next/navigation";
 
 const Hello = ({ onTopicChange, onKeywordsChange, onGenerateClicked }) => {
+  const router = useRouter()
+  const [isGenerating, setIsGenerating] = useState(false)
   let topic = '';
   let keywords = '';
 
@@ -27,6 +30,11 @@ const Hello = ({ onTopicChange, onKeywordsChange, onGenerateClicked }) => {
     })
     if (isNotEmpty) {
       onGenerateClicked('true');
+      setIsGenerating(true)
+      setTimeout(() => {
+        setIsGenerating(false)
+      }, 60000)
+      router.push('#content')
     } else {
       const fillAllElements: HTMLParagraphElement = document.querySelector('.fillAllElements')
       fillAllElements.style.display = 'inline';
@@ -46,18 +54,14 @@ const Hello = ({ onTopicChange, onKeywordsChange, onGenerateClicked }) => {
       </p>
       <PrimaryTextInput
         placeholder="Введите тему..."
-        width={1139}
-        height={107}
         onChange={handleTopicChange}
       />
       <SecondaryTextInput
         placeholder="Введите ключевые слова..."
-        width={1139}
-        height={107}
         onChange={handleKeywordsChange}
-
       />
-      <SecondaryButton onClick={handleGenerateClicked}>Сгенерировать</SecondaryButton>
+      <SecondaryButton onClick={handleGenerateClicked} disabled={isGenerating}>Сгенерировать</SecondaryButton>
+      <p>Нажатия на кнопку - 1 раз в минуту</p>
       <p className="fillAllElements" style={{display: 'none'}}>Заполните все поля!</p>
     </div>
   );

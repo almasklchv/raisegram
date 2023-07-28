@@ -34,13 +34,14 @@
 }
 
 .steps {
+  position: relative;
   margin-bottom: 382px;
 }
 
 .step {
   display: flex;
   float: right;
-  margin-top: 75px;
+  margin-top: 4.5%;
   margin-right: 7%;
 }
 
@@ -54,8 +55,8 @@
 }
 
 .stepSecond {
-  margin-top: 645px;
-  margin-right: -140px;
+  margin-top: 42.3%;
+  margin-right: -10%;
 
   .stepInfo {
     margin-right: 105px;
@@ -69,8 +70,8 @@
 }
 
 .stepThree {
-  margin-top: 335px;
-  margin-right: 260px;
+  margin-top: 21.7%;
+  margin-right: 17%;
 
   .stepInfo {
     margin-top: -15px;
@@ -84,8 +85,8 @@
 }
 
 .stepFour {
-  margin-top: 848px;
-  margin-right: -380px;
+  margin-top: 22.5%;
+  margin-right: 40%;
 
   .stepInfo {
     margin-right: 105px;
@@ -106,30 +107,837 @@
 }
 
 .lineToTwo {
-  margin-top: 222px;
-  margin-right: -15px;
+  margin-top: 14.5%;
+  margin-right: -1%;
 }
 
 .lineToThree {
-  margin-top: 750px;
-  margin-right: -370px;
+  margin-top: 49.3%;
+  margin-right: -24.6%;
   transform: rotate(27deg);
 }
 
 .lineToFour {
-  margin-top: 448px;
-  margin-right: -130px;
+  margin-top: 29.2%;
+  margin-right: -8%;
   transform: rotate(-27deg);
 }
 
 .lineToFive {
-  margin-top: 29%;
+  margin-top: 119.3%;
   position: relative;
-  top: -468px;
-  left: 590px;
+  left: 50%;
 }
 
 .stepFiveInfo {
-  margin-top: -413px;
-  margin-left: 547px;
+  margin-top: 5%;
+  margin-left: 35%;
+}
+
+@media (max-width: 1474px) {
+  .title {
+    font-size: 55px;
+  }
+
+  .line {
+    height: 350px;
+  }
+
+  .lineToTwo {
+    margin-top: 13.5%;
+  }
+
+  .lineToThree {
+    margin-top: 45%;
+  }
+
+  .lineToFour {
+    margin-top: 25.4%;
+  }
+
+  .lineToFive {
+    margin-top: 104.8%;
+    left: 54%;
+  }
+
+  .stepSecond {
+    margin-top: 37.5%;
+  }
+
+  .stepThree {
+    margin-top: 18.4%;
+  }
+
+  .stepFour {
+    margin-top: 20.2%;
+    margin-right: 37%;
+  }
+
+  .stepInfo {
+    font-size: 45px;
+  }
+
+  .stepFiveInfo {
+    margin-left: 41%;
+  }
+
+  .circle {
+    width: 130px;
+    height: 130px;
+
+    .stepPosition {
+      font-size: 40px;
+      top: 3px;
+      left: 40px;
+    }
+  }
+}
+
+@media (max-width: 1438px) {
+  .line {
+    height: 300px;
+  }
+
+  .lineToTwo {
+    margin-top: 14.8%;
+  }
+
+  .lineToThree {
+    margin-top: 44.3%;
+    margin-left: -26%;
+  }
+
+  .lineToFour {
+    margin-top: 27.4%;
+  }
+
+  .lineToFive {
+    margin-top: 108.5%;
+    left: 54%;
+  }
+
+  .stepSecond {
+    margin-top: 37.5%;
+  }
+
+  .stepThree {
+    margin-top: 18.4%;
+  }
+
+  .stepFour {
+    margin-top: 20.2%;
+    margin-right: 37%;
+  }
+
+  .stepFiveInfo {
+    margin-left: 41%;
+  }
+}
+
+@media (max-width: 1300px) {
+  .line {
+    height: 250px;
+  }
+
+  .lineToTwo {
+    margin-top: 15.2%;
+  }
+
+  .lineToThree {
+    margin-top: 46.3%;
+    position: relative;
+    left: 5%;
+  }
+
+  .lineToFour {
+    margin-top: 30.4%;
+    position: relative;
+    left: 7%;
+  }
+
+  .lineToFive {
+    margin-top: 109.5%;
+    left: 56%;
+  }
+
+  .stepSecond {
+    margin-top: 35.5%;
+  }
+
+  .stepThree {
+    margin-top: 19.4%;
+    position: relative;
+    left: 3%;
+  }
+
+  .stepFour {
+    margin-top: 20.2%;
+    margin-right: 34%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .title {
+    font-size: 45px;
+  }
+
+  .lineToThree,
+  .lineToFour {
+    transform: none;
+  }
+
+  .lineToTwo {
+    margin-top: 15.5%;
+  }
+
+  .lineToThree {
+    margin-top: 32.4%;
+    position: relative;
+    left: 9%;
+  }
+
+  .lineToFour {
+    margin-top: 33.4%;
+    left: 5%;
+  }
+
+  .lineToFive {
+    margin-top: 117.9%;
+    left: 46%;
+  }
+
+  .step {
+    margin-right: 22%;
+  }
+
+  .stepSecond {
+    margin-top: 21.2%;
+    margin-right: 44.5%;
+  }
+
+  .stepThree {
+    margin-top: 21.4%;
+    position: relative;
+    left: 4.6%;
+  }
+
+  .stepFour {
+    margin-top: 22.2%;
+    margin-right: 43%;
+  }
+
+  .stepFiveInfo {
+    margin-left: 31%;
+  }
+
+  .stepInfo {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .title {
+    margin-top: 120px;
+  }
+
+  .lineToTwo {
+    margin-top: 17%;
+    position: relative;
+    left: 2%;
+  }
+
+  .lineToThree {
+    margin-top: 36%;
+    left: 13%;
+  }
+
+  .lineToFour {
+    margin-top: 36.4%;
+    left: 8%;
+  }
+
+  .lineToFive {
+    margin-top: 126.9%;
+    left: 44%;
+  }
+
+  .stepSecond {
+    margin-top: 23.5%;
+  }
+
+  .stepThree {
+    margin-top: 24%;
+    left: 7.6%;
+  }
+
+  .stepFour {
+    margin-top: 24.2%;
+    margin-right: 44%;
+  }
+}
+
+@media (max-width: 994px) {
+  .lineToTwo {
+    margin-top: 16%;
+    left: 1%;
+  }
+
+  .lineToThree {
+    margin-top: 39%;
+    left: 13%;
+  }
+
+  .lineToFour {
+    margin-top: 39.4%;
+    left: 6%;
+  }
+
+  .lineToFive {
+    margin-top: 132.4%;
+    left: 46%;
+  }
+
+  .step {
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  .stepSecond {
+    margin-top: 27.5%;
+    margin-right: 44.5%;
+  }
+
+  .stepThree {
+    margin-top: 28%;
+
+    .edit {
+      left: 390px;
+    }
+  }
+
+  .stepFour {
+    margin-top: 28.2%;
+    margin-right: 43%;
+
+    .search {
+      left: 95px;
+    }
+  }
+
+  .stepInfo {
+    font-size: 30px;
+  }
+
+  .stepFiveInfo {
+    margin-left: 33%;
+  }
+
+  .circle {
+    width: 100px;
+    height: 100px;
+
+    .stepPosition {
+      font-size: 30px;
+      left: 33px;
+    }
+  }
+}
+
+@media (max-width: 849px) {
+  .lineToTwo {
+    margin-top: 16%;
+  }
+
+  .lineToThree {
+    margin-top: 43%;
+    left: 13%;
+  }
+
+  .lineToFour {
+    margin-top: 42.4%;
+    left: 5%;
+  }
+
+  .lineToFive {
+    margin-top: 143.4%;
+    left: 46%;
+  }
+
+  .step {
+    img {
+      width: 35px;
+      height: 35px;
+    }
+
+    .edit {
+      left: 283px;
+      top: -102px;
+    }
+  }
+
+  .stepSecond {
+    margin-top: 32.5%;
+    margin-right: 44%;
+  }
+
+  .stepThree {
+    margin-top: 31%;
+    left: 7.6%;
+  }
+
+  .stepFour {
+    margin-top: 33.2%;
+    margin-right: 43%;
+  }
+
+  .stepInfo {
+    font-size: 27px;
+  }
+
+  .stepFiveInfo {
+    margin-left: 34%;
+  }
+
+  .circle {
+    width: 80px;
+    height: 80px;
+
+    .stepPosition {
+      font-size: 25px;
+      left: 25px;
+      top: 1px;
+    }
+  }
+}
+
+@media (max-width: 778px) {
+  .lineToThree {
+    margin-top: 45%;
+    left: 16%;
+  }
+
+  .lineToFour {
+    margin-top: 46.4%;
+    left: 6%;
+  }
+
+  .lineToFive {
+    margin-top: 153.4%;
+    left: 49%;
+  }
+
+  .step {
+    margin-right: 15%;
+  }
+
+  .stepSecond {
+    margin-top: 33.5%;
+    margin-right: 39%;
+  }
+
+  .stepThree {
+    margin-top: 34%;
+    left: 8.6%;
+  }
+
+  .stepFour {
+    margin-top: 35.2%;
+    margin-right: 39%;
+  }
+}
+
+@media (max-width: 713px) {
+  .lineToTwo {
+    margin-top: 17%;
+  }
+
+  .lineToThree {
+    margin-top: 51%;
+    left: 19%;
+  }
+
+  .lineToFour {
+    margin-top: 51.4%;
+  }
+
+  .lineToFive {
+    margin-top: 169.4%;
+    left: 47%;
+  }
+
+  .stepSecond {
+    margin-top: 38.5%;
+    margin-right: 40%;
+  }
+
+  .stepThree {
+    margin-top: 39%;
+  }
+
+  .stepFour {
+    margin-top: 39.2%;
+    margin-right: 40%;
+  }
+
+  .stepFiveInfo {
+    margin-left: 32%;
+  }
+
+  .stepInfo {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 683px) {
+  .lineToFive {
+    margin-top: 102.4%;
+  }
+}
+
+@media (max-width: 674px) {
+  .lineToFive {
+    margin-top: 1.4%;
+  }
+}
+
+@media (max-width: 658px) {
+  .stepSecond {
+    position: relative;
+    right: 3%;
+  }
+}
+
+@media (max-width: 641px) {
+  .title {
+    font-size: 35px;
+  }
+
+  .lineToTwo {
+    margin-top: 19%;
+  }
+
+  .lineToThree {
+    margin-top: 56%;
+    left: 14%;
+  }
+
+  .lineToFour {
+    margin-top: 55.4%;
+    left: 7%;
+  }
+
+  .lineToFive {
+    margin-top: 186.4%;
+    left: 48%;
+  }
+
+  .step {
+    margin-right: 8%;
+  }
+
+  .stepSecond {
+    margin-right: 33%;
+    margin-top: 42.5%;
+  }
+
+  .stepThree {
+    margin-top: 41%;
+    margin-right: 11%;
+  }
+
+  .stepFour {
+    margin-top: 42.2%;
+    margin-right: 38%;
+  }
+
+  .stepSecond,
+  .stepFour {
+    .stepInfo {
+      margin-right: 62px;
+    }
+  }
+}
+
+@media (max-width: 608px) {
+  .line {
+    height: 170px;
+  }
+
+  .lineToTwo {
+    margin-top: 17%;
+  }
+
+  .lineToThree {
+    margin-top: 42%;
+    left: 10%;
+  }
+
+  .lineToFour {
+    margin-top: 41.4%;
+  }
+
+  .lineToFive {
+    height: 185px;
+    margin-top: 140.4%;
+    left: 55%;
+  }
+
+  .stepInfo {
+    font-size: 20px;
+  }
+
+  .circle {
+    width: 70px;
+    height: 70px;
+
+    .stepPosition {
+      font-size: 20px;
+      left: 23px;
+      top: 3px;
+    }
+  }
+
+  .step {
+    img {
+      width: 25px;
+      height: 25px;
+    }
+
+    .lightning {
+      left: 46px;
+      top: -30px;
+    }
+
+    .edit {
+      left: 191px;
+      top: -69px;
+    }
+
+    .search {
+      left: 60px;
+      top: -35px;
+    }
+  }
+
+  .stepSecond {
+    margin-right: 30%;
+    margin-top: 29.5%;
+  }
+
+  .stepThree {
+    margin-top: 29%;
+  }
+
+  .stepFour {
+    margin-top: 29.2%;
+    margin-right: 33%;
+  }
+
+  .stepFiveInfo {
+    margin-left: 42%;
+  }
+}
+
+@media (max-width: 600px) {
+  .step {
+    margin-left: 5px;
+    margin-right: 45px;
+  }
+
+  .lineToTwo {
+    margin-top: 100px;
+  }
+
+  .lineToThree {
+    margin-top: 246px;
+    left: 55px;
+  }
+
+  .lineToFour {
+    margin-top: 241px;
+  }
+
+  .lineToFive {
+    float: right;
+    margin-top: 256px;
+    left: 231px;
+  }
+
+  .stepSecond {
+    margin-right: 176px;
+  }
+
+  .stepThree {
+    margin-top: 172px;
+    margin-right: 59px;
+  }
+
+  .stepSecond {
+    margin-top: 172px;
+  }
+
+  .stepFour {
+    margin-top: 173px;
+    margin-right: 193px;
+  }
+
+  .stepFiveInfo {
+    float: right;
+    position: relative;
+    top: 19px;
+    right: 154px;
+    margin-bottom: 150px;
+  }
+}
+
+@media (max-width: 518px) {
+  .lineToTwo {
+    left: 2%;
+    margin-top: 83px;
+  }
+
+  .lineToThree {
+    margin-top: 232px;
+    left: 57px;
+  }
+
+  .lineToFive {
+    margin-top: 5px;
+    position: relative;
+    top: 234px;
+    left: 205px;
+  }
+
+  .step {
+    margin-right: 74px;
+  }
+
+  .stepSecond {
+    margin-right: 173px;
+  }
+
+  .stepThree {
+    margin-top: 179px;
+    margin-right: 87px;
+  }
+
+  .stepFour {
+    margin-top: 176px;
+    margin-right: 194px;
+  }
+
+  .stepInfo {
+    font-size: 16px;
+  }
+
+  .stepFiveInfo {
+    top: 194px;
+    right: 165px;
+    margin-bottom: 300px;
+  }
+
+  .circle {
+    width: 55px;
+    height: 55px;
+    min-width: 55px;
+    min-height: 55px;
+
+    .stepPosition {
+      font-size: 16px;
+      left: 19px;
+      top: 2px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .title {
+    font-size: 25px;
+    margin-top: 70px;
+  }
+}
+
+@media (max-width: 479px) {
+  .lineToFive {
+    top: -2px;
+    left: -234px;
+  }
+
+  .stepFiveInfo {
+    right: 139px;
+  }
+}
+
+@media (max-width: 455px) {
+  .lineToThree {
+    margin-top: 235px;
+    left: 75px;
+  }
+
+  .lineToFour {
+    margin-top: 233px;
+    left: 39px;
+  }
+
+  .lineToFive {
+    top: 232px;
+    left: 204px;
+  }
+
+  .step {
+    margin-right: 40px;
+  }
+
+  .stepSecond {
+    margin-top: 177px;
+    margin-right: 141px;
+  }
+
+  .stepThree {
+    margin-top: 173px;
+    margin-right: 47px;
+  }
+
+  .stepFour {
+    margin-right: 151px;
+  }
+
+  .stepFiveInfo {
+    right: 124px;
+  }
+}
+
+@media (max-width: 436px) {
+  .lineToThree {
+    left: 59px;
+  }
+
+  .lineToFive {
+    top: 231px;
+    left: 188px;
+  }
+
+  .stepSecond,
+  .stepFour {
+    .stepInfo {
+      margin-right: 42px;
+    }
+  }
+
+  .stepFiveInfo {
+    right: 114px;
+  }
+}
+
+@media(max-width: 416px) {
+  .lineToFive {
+    left: -185px;
+    top: 1px;
+  }
+
+  .stepFiveInfo {
+    right: 93px;
+  }
 }

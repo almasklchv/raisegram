@@ -13,3 +13,16 @@
 .btn:hover {
     background: radial-gradient(156.41% 156.35% at 53.43% -38.10%, #71725C 0%, #443D3E 54.83%, #332E33 100%);
 }
+
+@media(max-width: 994px) {
+    .logo {
+        width: 49.6px;
+        height: 92px;
+    }
+}
+
+@media (max-width: 800px) {
+    .logo {
+        display: none;
+    }
+}

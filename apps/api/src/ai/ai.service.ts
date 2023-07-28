@@ -34,6 +34,7 @@ export class AiService {
   }
 
   async getImage(text: string) {
+    console.log(JSON.stringify(text))
     const promptForImage = await this.openAi.createChatCompletion({
       model: 'gpt-3.5-turbo',
       messages: [
@@ -43,11 +44,11 @@ export class AiService {
         },
         {
           role: 'user',
-          content: `Post text: ${text['text']}`,
+          content: `Post text: ${JSON.stringify(text)}`,
         },
       ],
     })
-
+//${promptForImage.data.choices[0].message.content}
     const response = await this.openAi.createImage({
       prompt: `digital art for ${promptForImage.data.choices[0].message.content}`,
       n: 1,
@@ -56,4 +57,3 @@ export class AiService {
     return response.data.data[0].url;
   }
 }
-
