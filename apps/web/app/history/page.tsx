@@ -26,7 +26,7 @@ const page = () => {
         const idFromUrl = urlParams.get("user_id");
 
         if (idFromUrl == JSON.parse(userFromLocalStorage).data.id) {
-          const url = `http://localhost:3333/post/view`;
+          const url = `https://raisegram.ctw.re/api/post/view`;
           const response = await axios.post(url, null, {
             params: {
               authorId: idFromUrl,
