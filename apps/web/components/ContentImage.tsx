@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import styles from "../styles/ContentImage.module.scss";
+import classNames from "classnames";
 
 const ContentImage = ({imageSrc, ...props}) => {
   const handleDownload = () => {
@@ -33,7 +34,7 @@ const ContentImage = ({imageSrc, ...props}) => {
   return (
     <div style={{marginTop: props.marginTop}} className={styles.message__content}>
       <Image
-        className={styles.poster}
+        className={classNames(styles.poster, 'poster')}
         src={imageSrc}
         alt="post image"
         width={500}
