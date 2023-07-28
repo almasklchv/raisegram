@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import styles from "../styles/BottomNavigationMenu.module.scss";
 import Image from "next/image";
@@ -13,15 +12,18 @@ const BottomNavigationMenu = () => {
   const [home, setHome] = useState("home");
   const [generate, setGenerate] = useState("generate");
   const [history, setHistory] = useState("history");
-  const [isChanged, setIsChanged] = useState(window.location.pathname);
+  const [isChanged, setIsChanged] = useState("");
 
   useEffect(() => {
-    
+    setIsChanged(window.location.pathname);
+  }, []);
+
+  useEffect(() => {
     if (isChanged == "/") {
       setHome("home-active");
       setGenerate("generate");
       setHistory("history");
-    } else if (isChanged == "/generate" ) {
+    } else if (isChanged == "/generate") {
       setGenerate("generate-active");
       setHome("home");
       setHistory("history");
@@ -37,8 +39,6 @@ const BottomNavigationMenu = () => {
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
 
   let userFromLocalStorage = null;
-
-  
 
   const openAuthModal = () => {
     setIsAuthModalOpen(true);
@@ -71,7 +71,9 @@ const BottomNavigationMenu = () => {
     e.preventDefault();
     if (localStorage.getItem("user")) {
       setIsChanged("/history");
-      window.location.href = `/history?user_id=${JSON.parse(localStorage.getItem('user')).data.id}`
+      window.location.href = `/history?user_id=${
+        JSON.parse(localStorage.getItem("user")).data.id
+      }`;
     } else {
       openAuthModal();
     }
