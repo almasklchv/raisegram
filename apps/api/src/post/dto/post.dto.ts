@@ -1,5 +1,3 @@
-import { User } from "@prisma/client";
-
 export class PostDto {
     title: string;
     keywords: string;

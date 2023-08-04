@@ -44,6 +44,24 @@ body {
   );
 }
 
+.hello > .btn_back {
+  margin-top: 0;
+  width: auto;
+  height: auto;
+  font-size: 16px;
+
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: #f54c6e;
+  font-size: 100px;
+  margin-left: -90%;
+}
+
+.btn_back:hover {
+  color: #000;
+}
+
 .btn:hover {
   background: radial-gradient(
     156.41% 156.35% at 53.43% -38.1%,
@@ -139,6 +157,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 
 .hello > button {
@@ -267,6 +286,10 @@ footer {
     height: 75px;
     font-size: 26.981px;
   }
+  
+  .hello > .btn_back {
+    font-size: 84.981px;
+  }
 
   .custom-text {
     font-size: 30px;
@@ -274,6 +297,10 @@ footer {
 }
 
 @media (max-width: 850px) {
+  .hello {
+    margin-top: -5%;
+  }
+
   .hello > button {
     width: 305px;
     height: 70px;
@@ -291,11 +318,15 @@ footer {
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 750px) {
   .hello > button {
     width: 265px;
     height: 60px;
     font-size: 20.981px;
+  }
+
+  .hello > .btn_back {
+    font-size: 65px;
   }
 
   .messages {

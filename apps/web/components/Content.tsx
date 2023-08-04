@@ -13,6 +13,7 @@ const Content = ({ topic, keywords, generateClicked, setGenerateClicked }) => {
   const descriptionRef = useRef(null);
   const iconRef = useRef(null);
   const [imageSrc, setImageSrc] = useState("");
+  
 
   const getPostFromApi = async (topic, keywords) => {
     try {

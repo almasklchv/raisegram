@@ -7,8 +7,10 @@ import { AiDto } from './dto';
 export class AiService {
   constructor(private config: ConfigService) {}
   private readonly OPEN_AI_KEY = this.config.get('OPEN_AI_KEY');
-  private readonly PROMPT_FOR_TEXT = this.config.get('PROMPT_FOR_TEXT');
+  private readonly PROMPT_FOR_POST = this.config.get('PROMPT_FOR_POST');
   private readonly PROMPT_FOR_IMAGE = this.config.get('PROMPT_FOR_IMAGE');
+  private readonly PROMPT_FOR_KEYWORDS = this.config.get('PROMPT_FOR_KEYWORDS');
+  private readonly PROMPT_FOR_IDEAS = this.config.get('PROMPT_FOR_IDEAS');
   private configuration = new Configuration({
     apiKey: `${this.OPEN_AI_KEY}`,
   });
@@ -20,7 +22,7 @@ export class AiService {
       messages: [
         {
           role: 'system',
-          content: `${this.PROMPT_FOR_TEXT}`,
+          content: `${this.PROMPT_FOR_POST}`,
         },
         {
           role: 'user',
@@ -29,12 +31,12 @@ export class AiService {
         },
       ],
     });
-    
+
     return response.data.choices[0].message.content;
   }
 
   async getImage(text: string) {
-    console.log(JSON.stringify(text))
+    console.log(JSON.stringify(text));
     const promptForImage = await this.openAi.createChatCompletion({
       model: 'gpt-3.5-turbo',
       messages: [
@@ -47,13 +49,43 @@ export class AiService {
           content: `Post text: ${JSON.stringify(text)}`,
         },
       ],
-    })
-//${promptForImage.data.choices[0].message.content}
+    });
+    //${promptForImage.data.choices[0].message.content}
     const response = await this.openAi.createImage({
       prompt: `digital art for ${promptForImage.data.choices[0].message.content}`,
       n: 1,
-      size: "1024x1024",
+      size: '1024x1024',
     });
     return response.data.data[0].url;
+  }
+
+  async getIdeas(category: string) {
+    const promptForKeywords = await this.openAi.createChatCompletion({
+      model: 'gpt-3.5-turbo',
+      messages: [
+        {
+          role: 'system',
+          content: `${this.PROMPT_FOR_KEYWORDS}`,
+        },
+        {
+          role: 'user',
+          content: `Категория: ${JSON.stringify(category)}`,
+        },
+      ],
+    });
+    const idea = await this.openAi.createChatCompletion({
+      model: 'gpt-3.5-turbo',
+      messages: [
+        {
+          role: 'system',
+          content: `${this.PROMPT_FOR_IDEAS}`,
+        },
+        {
+          role: 'user',
+          content: `Ключевые слова: ${promptForKeywords.data.choices[0].message.content}`,
+        },
+      ],
+    });
+    return idea.data.choices[0].message.content;
   }
 }
