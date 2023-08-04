@@ -61,7 +61,7 @@ const Ideas = ({ setIsIdea, handleBackClicked, onGenerateClicked }) => {
       <button className="btn_back" onClick={onBackClicked}>
         ‹
       </button>
-      <h1 className={stylesFromHello.title}>Нету идей? Не проблема!</h1>
+      <h1 className={stylesFromHello.title}>Нет идей? Не проблема!</h1>
       <p className={stylesFromHello.description}>
         Напиши свою категорию, <br></br> и я тебе предоставлю 15 идей для постов
       </p>

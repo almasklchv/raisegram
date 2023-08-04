@@ -11,6 +11,12 @@ export class AiService {
   private readonly PROMPT_FOR_IMAGE = this.config.get('PROMPT_FOR_IMAGE');
   private readonly PROMPT_FOR_KEYWORDS = this.config.get('PROMPT_FOR_KEYWORDS');
   private readonly PROMPT_FOR_IDEAS = this.config.get('PROMPT_FOR_IDEAS');
+  private readonly PROMPT_FOR_DESCRIPTION = this.config.get(
+    'PROMPT_FOR_DESCRIPTION',
+  );
+  private readonly PROMPT_FOR_SUMMARIZE_DESCRIPTION = this.config.get(
+    'PROMPT_FOR_SUMMARIZE_DESCRIPTION',
+  );
   private configuration = new Configuration({
     apiKey: `${this.OPEN_AI_KEY}`,
   });
@@ -87,5 +93,57 @@ export class AiService {
       ],
     });
     return idea.data.choices[0].message.content;
+  }
+
+  async getDescription(
+    keywords: string,
+    descriptionForSummarize: string = null,
+  ) {
+    let description;
+    if (!descriptionForSummarize) {
+      description = await this.openAi.createChatCompletion({
+        model: 'gpt-3.5-turbo',
+        messages: [
+          {
+            role: 'system',
+            content: `${this.PROMPT_FOR_DESCRIPTION}`,
+          },
+          {
+            role: 'user',
+            content: `Ключевые слова: ${JSON.stringify(keywords)}`,
+          },
+        ],
+      }).then((response) => {
+        if (response.data.choices[0].message.content.length > 150) {
+          this.getDescription('', response.data.choices[0].message.content);
+        } else {
+          console.log(response.data.choices[0].message.content)
+          return response.data.choices[0].message.content
+        }
+      });
+    } else {
+      description = await this.openAi.createChatCompletion({
+        model: 'gpt-3.5-turbo',
+        messages: [
+          {
+            role: 'system',
+            content: `${this.PROMPT_FOR_SUMMARIZE_DESCRIPTION}`,
+          },
+          {
+            role: 'user',
+            content: `Описание профиля: ${JSON.stringify(
+              descriptionForSummarize
+            )}`,
+          },
+        ],
+      }).then((response) => {
+        if (response.data.choices[0].message.content.length > 150) {
+          this.getDescription('', response.data.choices[0].message.content);
+        } else {
+          console.log(response.data.choices[0].message.content)
+          return response.data.choices[0].message.content;
+        }
+      });
+    }
   }
 }

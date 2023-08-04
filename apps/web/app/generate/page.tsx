@@ -96,12 +96,12 @@ const page = () => {
               onClick={handleIdeaClicked}
               onBack={handleBackClicked}
             />
-            <Card
+            {/* <Card
               title={"Описание профиля"}
               imageUrl={"/assets/icons/profile-description.png"}
               onClick={handleDescriptionClicked}
               onBack={handleBackClicked}
-            />
+            /> */}
           </div>
         </div>
       )}

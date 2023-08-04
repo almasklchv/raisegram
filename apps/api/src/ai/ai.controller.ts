@@ -26,4 +26,5 @@ export class AiController {
     const ideas = await this.aiService.getIdeas(category);
     return ideas;
   }
+
 }
