@@ -34,11 +34,8 @@ const Ideas = ({ setIsIdea, handleBackClicked, onGenerateClicked }) => {
       setIsGenerating(true);
       setIsWaiting(false);
       if (ideas) {
-        setIdeas([])
+        setIdeas([]);
       }
-      // setTimeout(() => {
-      //   setIsGenerating(false);
-      // }, 60000);
       getIdeasFromApi(categoryInput.value);
     } else {
       const fillAllElements: HTMLParagraphElement =
@@ -52,7 +49,7 @@ const Ideas = ({ setIsIdea, handleBackClicked, onGenerateClicked }) => {
 
   const getIdeasFromApi = async (category: string) => {
     const ideas: any = await axios.post(
-      "http://localhost:3333/api/ai/idea",
+      "https://raisegram.ctw.re/api/ai/idea",
       category
     );
     setIdeas(ideas["data"]);
@@ -78,23 +75,25 @@ const Ideas = ({ setIsIdea, handleBackClicked, onGenerateClicked }) => {
       <p className="fillAllElements" style={{ display: "none" }}>
         Заполните все поля!
       </p>
-      
-      <div className={classNames(styles.cards, 'cards')}>
-      {Boolean(ideas.length) &&
-        ideas.map((idea, index) => <CardIdea ideasArr={ideas} indexOfArr={index} key={index} {...idea} />)}
-      {isWaiting && (
-        <p
-          className={stylesFromHello.description}
-          style={{ color: "rgba(201, 125, 37, 0.85)" }}
-        >
-          Жду вашего запроса :)
-        </p>
-      )} 
-        {/* {isGenerating && (
-          <p style={{ color: "rgba(201, 125, 37, 0.70)" }}>
-            Сейчас все будет готово, дайте нам 80 секунд...
+
+      <div className={classNames(styles.cards, "cards")}>
+        {Boolean(ideas.length) &&
+          ideas.map((idea, index) => (
+            <CardIdea
+              ideasArr={ideas}
+              indexOfArr={index}
+              key={index}
+              {...idea}
+            />
+          ))}
+        {isWaiting && (
+          <p
+            className={stylesFromHello.description}
+            style={{ color: "rgba(201, 125, 37, 0.85)" }}
+          >
+            Жду вашего запроса :)
           </p>
-        )} */}
+        )}
         {isGenerating && (
           <div
             className={stylesFromContentImage.message__content}
