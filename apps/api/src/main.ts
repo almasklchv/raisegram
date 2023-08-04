@@ -6,7 +6,9 @@ async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
   // // Enable CORS
-  app.enableCors();
+  app.enableCors({
+    origin: ['https://raisegram.ctw.re']
+  });
 
   await app.listen(3333);
 }
