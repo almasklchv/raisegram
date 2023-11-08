@@ -19,4 +19,12 @@ export class AiController {
     const imageUrl = await this.aiService.getImage(text);
     return imageUrl;
   }
+
+  @Post('/idea')
+  @HttpCode(200)
+  async getIdeas(@Body() category: string) {
+    const ideas = await this.aiService.getIdeas(category);
+    return ideas;
+  }
+
 }

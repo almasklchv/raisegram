@@ -21,7 +21,7 @@ const Header = () => {
 
   const checkUser = async () => {
     await axios
-      .post("http://localhost:3333/users/check", null, {
+      .post("https://raisegram-api-j38q.onrender.com/api/users/check", null, {
         params: {
           email: userFromLocalStorage.data.email,
           hash: userFromLocalStorage.data.password,

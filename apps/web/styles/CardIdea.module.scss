@@ -1,0 +1,254 @@
+.card {
+  position: relative;
+  width: 55vw;
+  min-height: 334px;
+  border-radius: 50px;
+  background: #8b71d6;
+  margin-bottom: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.theme {
+  max-width: 60%;
+}
+
+.topic,
+.keywords {
+  position: relative;
+  max-width: 80%;
+}
+
+.topic {
+  color: #fff;
+  font-family: Inter;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  margin-bottom: -10px;
+}
+
+.keywords {
+  color: #fff;
+  font-family: Inter;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.btn {
+  cursor: pointer;
+  position: relative;
+  left: 20px;
+}
+
+.generateIcon {
+  position: relative;
+  left: 15px;
+}
+
+.btnDescription {
+  color: #fff;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+@media (max-width: 1440px) {
+  .card {
+    width: 70vw;
+  }
+}
+
+@media (max-width: 1343px) {
+  .card {
+    min-height: 290px;
+  }
+
+  .topic {
+    font-size: 30px;
+  }
+
+  .keywords {
+    font-size: 25px;
+  }
+
+  .generateIcon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .btnDescription {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 1120px) {
+  .card {
+    min-height: 250px;
+  }
+
+  .topic {
+    font-size: 25px;
+  }
+
+  .keywords {
+    font-size: 20px;
+  }
+
+  .generateIcon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .btnDescription {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 950px) {
+  .card {
+    min-height: 190px;
+  }
+
+  .topic {
+    font-size: 22px;
+  }
+
+  .keywords {
+    font-size: 18px;
+  }
+
+  .generateIcon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .btnDescription {
+    font-size: 13.5px;
+  }
+}
+
+@media (max-width: 800px) {
+  .card {
+    width: 80vw;
+  }
+}
+
+@media (max-width: 700px) {
+  .theme {
+    position: relative;
+    left: 15px;
+  }
+
+  .btn {
+    left: -10px;
+  }
+}
+
+@media (max-width: 650px) {
+  .card {
+    margin-bottom: 17px;
+  }
+
+  .theme {
+    left: 30px;
+  }
+
+  .btn {
+    left: -25px;
+  }
+}
+
+@media (max-width: 630px) {
+  .card {
+    width: 85vw;
+    min-height: 140px;
+  }
+
+  .topic {
+    font-size: 18px;
+    margin-bottom: -5px;
+  }
+
+  .keywords {
+    font-size: 13.5px;
+  }
+
+  .generateIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .btnDescription {
+    font-size: 11px;
+  }
+
+  .theme {
+    left: 0;
+  }
+
+  .btn {
+    left: 0;
+  }
+}
+
+@media (max-width: 485px) {
+  .theme {
+    left: 15px;
+  }
+
+  .btn {
+    left: -10px;
+  }
+
+  .topic {
+    font-size: 16.5px;
+  }
+
+  .keywords {
+    font-size: 12.5px;
+  }
+
+  .btnDescription {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 425px) {
+  .card {
+    min-height: 120px;
+  }
+
+  .generateIcon {
+    left: 7px;
+    width: 35px;
+    height: 35px;
+  }
+
+  .btnDescription {
+    font-size: 9px;
+  }
+
+  .topic {
+    font-size: 15px;
+  }
+
+  .keywords {
+    font-size: 11.5px;
+  }
+
+  .theme {
+    left: 18px;
+  }
+
+  .btn {
+    left: -5px;
+  }
+}
