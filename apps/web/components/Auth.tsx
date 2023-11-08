@@ -33,53 +33,59 @@ const Auth = ({
   };
 
   const handleAuth = async () => {
-    if (isVerified) {
-      if (email && password) {
-        const isUserExist = await axios.post(
-          "https://raisegram-api-j38q.onrender.com/api/users/check",
-          null,
-          {
-            params: {
-              email: email,
-              hash: password,
-            },
-          }
-        );
+    if (email && password) {
+      const isUserExist = await axios.post(
+        "https://raisegram-api-j38q.onrender.com/api/users/check",
+        null,
+        {
+          params: {
+            email: email,
+            hash: password,
+          },
+        }
+      );
 
-        if (!isUserExist.data) {
-          await axios
-            .post("https://raisegram-api-j38q.onrender.com/api/users/create", null, {
+      if (!isUserExist.data) {
+        await axios
+          .post(
+            "https://raisegram-api-j38q.onrender.com/api/users/create",
+            null,
+            {
               params: {
                 email: email,
                 hash: password,
               },
-            })
-            .then((user) => {
-              localStorage.setItem("user", JSON.stringify(user));
-              window.location.href = "/generate";
-            });
-        } else {
-          try {
-            await axios
-              .post("https://raisegram-api-j38q.onrender.com/api/users/get", null, {
+            }
+          )
+          .then((user) => {
+            localStorage.setItem("user", JSON.stringify(user));
+            window.location.href = "/generate";
+          });
+      } else {
+        try {
+          await axios
+            .post(
+              "https://raisegram-api-j38q.onrender.com/api/users/get",
+              null,
+              {
                 params: {
                   email: email,
                   hash: password,
                 },
-              })
-              .then((user) => {
-                console.log(user);
-                localStorage.setItem("user", JSON.stringify(user));
-                onClose();
-                setIsLogged(true);
-                window.location.href = "/generate";
-              });
-          } catch (error) {
-            setIsIncorrect(true);
-            setTimeout(() => {
-              setIsIncorrect(false);
-            }, 1000);
-          }
+              }
+            )
+            .then((user) => {
+              console.log(user);
+              localStorage.setItem("user", JSON.stringify(user));
+              onClose();
+              setIsLogged(true);
+              window.location.href = "/generate";
+            });
+        } catch (error) {
+          setIsIncorrect(true);
+          setTimeout(() => {
+            setIsIncorrect(false);
+          }, 1000);
         }
       }
     }
@@ -92,14 +98,14 @@ const Auth = ({
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder={input1}
-        classnameprop={'emailInput'}
+        classnameprop={"emailInput"}
       ></PrimaryTextInput>
       <SecondaryTextInput
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         type={"password"}
         placeholder={input2}
-        classnameprop={'passwordInput'}
+        classnameprop={"passwordInput"}
       ></SecondaryTextInput>
       {/* <div className={styles.recaptcha}>
         <ReCAPTCHA
@@ -108,10 +114,7 @@ const Auth = ({
           onChange={onCaptcha}
         />
       </div> */}
-      <SecondaryButton
-        onClick={handleAuth}
-        classnameprop={'authButton'}
-      >
+      <SecondaryButton onClick={handleAuth} classnameprop={"authButton"}>
         {button}
       </SecondaryButton>
       {isIncorrect && (
