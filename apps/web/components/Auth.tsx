@@ -101,13 +101,13 @@ const Auth = ({
         placeholder={input2}
         classnameprop={'passwordInput'}
       ></SecondaryTextInput>
-      <div className={styles.recaptcha}>
+      {/* <div className={styles.recaptcha}>
         <ReCAPTCHA
           style={{ borderRadius: 20 }}
           sitekey={`${siteKeyCaptchaV3}`}
           onChange={onCaptcha}
         />
-      </div>
+      </div> */}
       <SecondaryButton
         onClick={handleAuth}
         classnameprop={'authButton'}
