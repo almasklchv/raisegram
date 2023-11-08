@@ -26,7 +26,7 @@ const Auth = ({
   const [isIncorrect, setIsIncorrect] = useState(false);
   const [isVerified, setIsVerified] = useState(false);
   // eslint-disable-next-line turbo/no-undeclared-env-vars
-  const siteKeyCaptchaV3 = "6Lcy8FgnAAAAABnrDDm0_edlQdstVn69uXtzalIJ";
+  const siteKeyCaptchaV3 = "6Ldn6FgnAAAAAP3olE7POiq0Ft1Sf14BlDMMxxSN";
 
   const onCaptcha = () => {
     setIsVerified(true);
