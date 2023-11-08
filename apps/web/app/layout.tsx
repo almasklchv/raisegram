@@ -3,7 +3,7 @@ import "../styles/globals.css";
 import "normalize.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BottomNavigationMenu from "../components/BottomNavigationMenu";
 
 export default function RootLayout({
@@ -11,6 +11,12 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  useEffect(() => {
+    setInterval(() => {
+      fetch("https://raisegram-api-j38q.onrender.com");
+    }, 300000);
+  }, []);
+
   return (
     <html lang="en">
       <head>

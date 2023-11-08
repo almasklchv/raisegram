@@ -49,7 +49,7 @@ const Ideas = ({ setIsIdea, handleBackClicked, onGenerateClicked }) => {
 
   const getIdeasFromApi = async (category: string) => {
     const ideas: any = await axios.post(
-      "https://raisegram.ctw.re/api/ai/idea",
+      "https://raisegram-api-j38q.onrender.com/api/ai/idea",
       category
     );
     setIdeas(ideas["data"]);

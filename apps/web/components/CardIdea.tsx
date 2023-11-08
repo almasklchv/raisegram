@@ -40,7 +40,7 @@ const CardIdea = ({ ideasArr, indexOfArr, ...props }) => {
 
   const getPostFromApi = async (topic, keywords) => {
     try {
-      await axios.post("https://raisegram.ctw.re/api/ai/text/", {
+      await axios.post("https://raisegram-api-j38q.onrender.com/api/ai/text/", {
         topic,
         keywords,
       }).then((response) => {
@@ -57,7 +57,7 @@ const CardIdea = ({ ideasArr, indexOfArr, ...props }) => {
   const getImageFromApi = async (text) => {
     try {
       await axios
-        .post("https://raisegram.ctw.re/api/ai/image/", text)
+        .post("https://raisegram-api-j38q.onrender.com/api/ai/image/", text)
         .then((response) => {
           setImageSrc(response.data);
           setImageGenerated(true)
@@ -65,7 +65,7 @@ const CardIdea = ({ ideasArr, indexOfArr, ...props }) => {
             localStorage.getItem("user")
           ).data;
           const authorId = userFromLocalStorage["id"];
-          axios.post("https://raisegram.ctw.re/api/post/", {
+          axios.post("https://raisegram-api-j38q.onrender.com/api/post/", {
             authorId: authorId,
             title: ideasArr[indexOfArr]['topic'],
             keywords: ideasArr[indexOfArr]['keywords'],
